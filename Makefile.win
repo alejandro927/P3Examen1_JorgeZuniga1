@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = mainExamen1.o Equipos.o Liga.o
-LINKOBJ  = mainExamen1.o Equipos.o Liga.o
+OBJ      = mainExamen1.o Equipos.o Liga.o Partido.o Tabla.o
+LINKOBJ  = mainExamen1.o Equipos.o Liga.o Partido.o Tabla.o
 LIBS     = -L"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/lib" -L"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/include" -I"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/include" -I"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/Alejandro/Desktop/c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -32,3 +32,9 @@ Equipos.o: Equipos.cpp
 
 Liga.o: Liga.cpp
 	$(CPP) -c Liga.cpp -o Liga.o $(CXXFLAGS)
+
+Partido.o: Partido.cpp
+	$(CPP) -c Partido.cpp -o Partido.o $(CXXFLAGS)
+
+Tabla.o: Tabla.cpp
+	$(CPP) -c Tabla.cpp -o Tabla.o $(CXXFLAGS)

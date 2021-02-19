@@ -1,14 +1,20 @@
 #include "Liga.hpp"
 #include <random>
 #include <ctime>
+#include <iomanip>
 
+Liga::Liga(string n) {
+	this->nombre = n;
+}
 
-Liga::Liga() {
-	//vacio
+Liga::~Liga() {
+	//delete Liga;
+	//partido , tabla , puntos por equipo
 }
 
 void Liga::agregarE(string nombre,int skill) {
 	equipos.push_back(new Equipos(nombre,skill));
+	tabla.push_back(new Tabla(nombre,0,0,0,0,0,0,0));
 }
 
 void Liga::modificarE(int posicion,int opcion) {
@@ -64,4 +70,18 @@ void Liga::ListarE(){
 		cout << "Nombre: "<< c->getnombre() << endl;
 		cout << "Skill: " << c->getskill() << endl;
 	}
+}
+
+void Liga::Listartabla(){
+	cout<<"Liga "<< nombre <<endl;
+	cout<<"Nombre   G   E   P   GF   GC   Pts"<<endl;
+	for(int i = 0; i < tabla.size(); i++) {
+		Tabla *c = tabla[i];
+		//cout<< i <<") "<< c->getnombre() << "  "<< c->getpartidosJ() << "  "<< c->getJganados() << "  "<< c->getempates() <<"  "<< c->getJperdidos() << "  " << c->getgolesAfavor() << "  " << c->getgolesContra() << "  " << c->getpuntos()<<endl;                                
+		cout<< setw(3)<<i+1 <<") "<<setw(3)<< c->getnombre() << setw(3)<< c->getpartidosJ() <<setw(3)<< c->getJganados() << setw(3) << c->getempates() <<setw(3)<< c->getJperdidos() << setw(3) << c->getgolesAfavor() << setw(3) << c->getgolesContra() << setw(3) << c->getpuntos()<<endl;
+	}
+}
+
+string Liga::getliga(){
+	return this->nombre;
 }

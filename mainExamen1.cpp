@@ -9,7 +9,11 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-	Liga* liga = new Liga();
+	string nombreLiga="";
+	cout<<"Buenas, Ingrese el nombre de la liga:";
+	getline(cin,nombreLiga);
+	Liga* liga = new Liga(nombreLiga);
+	
 
 	srand(time(NULL));
 	int opcion = -1;
@@ -54,6 +58,7 @@ int main(int argc, char** argv) {
 						case 4: {
 							int posi=0;
 							cout << "=====Aqui se eliminan los equipos====="<<endl;
+							cout << "Ingrese la posicion del equipo a eliminar:";
 							cin>>posi;
 							liga -> eliminarE(posi);
 						}
@@ -63,7 +68,9 @@ int main(int argc, char** argv) {
 			}
 			break;
 			case 2: {
-
+				cout << "=======Aqui se genera la jornada=======";
+				
+				
 			}
 			break;
 			case 3: {
@@ -71,11 +78,12 @@ int main(int argc, char** argv) {
 			}
 			break;
 			case 4: {
-
+				liga -> Listartabla();
 			}
 			break;
 		}
 	}
+	
 	delete liga;
 	return 0;
 }
