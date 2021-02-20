@@ -5,6 +5,7 @@ class Partido
 {
 	private:
 		
+		
 	public:
 };
 

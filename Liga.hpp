@@ -25,6 +25,8 @@ class Liga
 		void ListarE();
 		void Listartabla();
 		string getliga();
+		void generarJornada();
+		void ord(int arr[],bool ,int );
 };
 
 #endif

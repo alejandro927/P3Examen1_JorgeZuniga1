@@ -12,8 +12,9 @@ int main(int argc, char** argv) {
 	string nombreLiga="";
 	cout<<"Buenas, Ingrese el nombre de la liga:";
 	getline(cin,nombreLiga);
-	Liga* liga = new Liga(nombreLiga);
 	
+	Liga* liga = new Liga(nombreLiga);
+
 
 	srand(time(NULL));
 	int opcion = -1;
@@ -44,7 +45,7 @@ int main(int argc, char** argv) {
 							int opc=0;
 							cout << "=====Aqui se modifican los equipos====="<<endl;
 							cout<<"Ingrese la posicion del equipo que desea modificar:"<<endl;
-							    cin>>posicion;
+							cin>>posicion;
 							cout<<"Las opciones a modificar son:\n 1)El nombre \n 2)El Skill \n Su opcion:";
 							cin>>opc;
 							liga -> modificarE(posicion,opc);
@@ -69,11 +70,12 @@ int main(int argc, char** argv) {
 			break;
 			case 2: {
 				cout << "=======Aqui se genera la jornada=======";
-				
-				
+				liga -> generarJornada();
+
 			}
 			break;
 			case 3: {
+				cout << "=======Aqui se Simulan los juegos :v =======";
 
 			}
 			break;
@@ -83,7 +85,7 @@ int main(int argc, char** argv) {
 			break;
 		}
 	}
-	
+
 	delete liga;
 	return 0;
 }
